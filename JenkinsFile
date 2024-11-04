@@ -1,1 +1,26 @@
+pipeline {
+    agent any
+    environment {
+      AWS_ACCESS_KEY = credentials('aws-access-key') // Jenkins stored credentials
+      AWS_SECRET_KEY = credentials('aws-secret-key')
+    }
+        stages {
+            stage(checkout) {
+                steps {
+                    checkoutSCM
+                }
+            }
 
+            stage(tfinit) {
+                steps {
+                    bat 'C:\Users\mahes\Downloads\terraform_1.9.8_windows_386\terraform.exe init'
+                }
+
+            stage(tfapply) {
+                steps {
+                    bat 'C:\Users\mahes\Downloads\terraform_1.9.8_windows_386\terraform.exe apply -auto-approve'
+                }
+            }
+            }
+        }
+}
