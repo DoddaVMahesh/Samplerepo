@@ -15,12 +15,12 @@ pipeline {
                 steps {
                     bat 'terraform.exe init'
                 }
-
+            }
             stage(tfapply) {
                 steps {
                     bat 'terraform.exe plan'
                 }
             }
-            }
+            
         }
 }
