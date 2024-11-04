@@ -13,12 +13,12 @@ pipeline {
 
             stage(tfinit) {
                 steps {
-                    bat 'C:\Users\mahes\Downloads\terraform_1.9.8_windows_386\terraform.exe init'
+                    bat 'terraform.exe init'
                 }
 
             stage(tfapply) {
                 steps {
-                    bat 'C:\Users\mahes\Downloads\terraform_1.9.8_windows_386\terraform.exe apply plan'
+                    bat 'terraform.exe plan'
                 }
             }
             }
