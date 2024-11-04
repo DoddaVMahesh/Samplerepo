@@ -18,7 +18,7 @@ pipeline {
 
             stage(tfapply) {
                 steps {
-                    bat 'C:\Users\mahes\Downloads\terraform_1.9.8_windows_386\terraform.exe apply -auto-approve'
+                    bat 'C:\Users\mahes\Downloads\terraform_1.9.8_windows_386\terraform.exe apply plan'
                 }
             }
             }
