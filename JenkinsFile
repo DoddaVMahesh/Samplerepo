@@ -4,6 +4,10 @@ pipeline {
       AWS_ACCESS_KEY = credentials('aws-access-key') // Jenkins stored credentials
       AWS_SECRET_KEY = credentials('aws-secret-key')
     }
+
+    options {
+        ansiColor('xterm')
+        }
         stages {
             stage(checkout) {
                 steps {
